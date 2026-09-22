@@ -9,7 +9,11 @@ $(function(){
 
                 let itemName = (item.item).replace('_',' ');
                 let itemLabel = $('<p></p>').text(itemName);
-                let itemImg = $('<img>').attr('src','./assets/icons/fish/' + item.item + '.png');
+                let itemImg = $('<img>')
+                    .attr({
+                        "src": `./assets/icons/fish/${item.item}.png`,
+                        "alt": item.item
+                    });
 
                 let newItem = $('<div></div>').prepend(itemLabel, itemImg)
                     .attr({

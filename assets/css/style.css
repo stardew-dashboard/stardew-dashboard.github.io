@@ -65,7 +65,7 @@ html {
     --main-width: calc(100% - var(--items-panel-width) - var(--quick-look-width));
     
     
-    --item-cell: calc(((30vw - 24px) / 12) - 2px );
+    --item-cell: calc(((100% - 24px) / 12) - 2px );
     
     --padding-sm: 4px;
     
@@ -153,7 +153,7 @@ aside:last-child {
 }
 
 #quick-look, #all-items {
-    padding: 12px;
+    padding: 20px;
     position: fixed;
     height: 100%;
 }
@@ -168,7 +168,6 @@ aside:last-child {
     max-width: var(--items-panel-width);
     right: 0;
     border-left: 1px solid var(--gray);
-    overflow-y: auto;
 }
 
 
@@ -212,7 +211,7 @@ aside:last-child {
     margin-top: -1px;
 }
 #all-items p {
-    white-space: nowrap;
+    word-wrap: break-word;
     text-align: center;
     margin: 0 auto;
     padding: 1ch;
