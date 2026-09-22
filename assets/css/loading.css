@@ -1,15 +1,17 @@
 /************************************************************/
 /*  Loadding Page                                           */
 /************************************************************/
+html {
+    overflow: hidden;
+}
 body {
-    width: 100%;
-    height: 100vw;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
     background-image: url('../layout/loadscreen.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 100vh;
     margin: 0;
     animation: panDown 5s linear ;
     position: relative;
@@ -75,4 +77,24 @@ svg {
     position: absolute;
     pointer-events: none;
     z-index: -1;
+}
+
+@media screen and (max-width: 786px) {   
+    
+    body {
+        overflow: hidden;
+        display: flex;
+    }
+    
+    .titlecard-container {
+        width: 100%;
+        padding: 4ch;
+        animation: none;
+    }
+    
+    .icons {
+        bottom: unset;
+        display: block;
+    }
+
 }

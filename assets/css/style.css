@@ -65,7 +65,7 @@ html {
     --main-width: calc(100% - var(--items-panel-width) - var(--quick-look-width));
     
     
-    --item-cell: calc(((100% - 24px) / 12) - 2px );
+    --item-cell: calc(((var(--items-panel-width) - 20px) / 12));
     
     --padding-sm: 4px;
     
@@ -76,6 +76,12 @@ html {
 /************************************************************/
 /*  Basic Layout                                            */
 /************************************************************/
+
+#seasons a, #buildings a {
+    color: var(--inherit);
+    text-decoration: none;
+    pointer-events: none;
+}
 
 h1, h2, h3, h4 {
     font-weight: normal;
@@ -421,4 +427,50 @@ main > .container:nth-child(2) > div:first-child,  main > .container:first-child
 }
 
 
+@media screen and (max-width: 786px) {
+    
+    :root {
+        --quick-look-width: 100%;
+        --items-panel-width: 100%;
+        
+        --item-cell: calc(((var(--items-panel-width)) / 8) + 1px);
+    }
+    
+    body {
+        scroll-behavior: smooth;
+    }
+    
+    header {
+        position: relative;
+    }
+    
+    .wrapper {
+        flex-wrap: wrap;
+        overflow-x: hidden;
+    }
+    
+    aside, main {
+        margin-top: 0;
+        height: unset;
+    }
+    
+    aside:first-of-type { order: 1; }
+    aside:last-of-type { order: 2; }
+    main { order: 3; }
+    
+    #quick-look, #all-items {
+        width: 100%;
+        position: relative;
+        border: none;
+    }
+    
+    #all-items {
+        max-width: unset;
+    }
+    
+    #seasons, #buildings {
+        width: 100%;
+    }
+
+}
 
